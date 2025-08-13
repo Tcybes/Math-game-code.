@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Sample Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        nav {
+            background: #222;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        #hero {
+            background: #0078d7;
+            color: #fff;
+            padding: 4em 2em;
+            text-align: center;
+        }
+        #hero button {
+            background: #fff;
+            color: #0078d7;
+            border: none;
+            padding: 0.75em 2em;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+        #features {
+            padding: 3em 2em;
+            background: #fff;
+        }
+        .feature-list {
+            display: flex;
+            gap: 2em;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .feature {
+            background: #f4f4f4;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            width: 250px;
+            text-align: center;
+        }
+        #contact {
+            padding: 3em 2em;
+            background: #e9ecef;
+        }
+        #contactForm {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            max-width: 400px;
+            margin: auto;
+        }
+        #contactForm input, #contactForm textarea {
+            padding: 0.75em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        #contactForm button {
+            background: #0078d7;
+            color: #fff;
+            border: none;
+            padding: 0.75em;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        #formMessage {
+            text-align: center;
+            margin-top: 1em;
+            color: green;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+        @media (max-width: 700px) {
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MySite</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="hero">
+        <h1>Welcome to MySite</h1>
+        <p>Your solution for modern web design.</p>
+        <button onclick="scrollToContact()">Contact Us</button>
+    </section>
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <div class="feature">
+                <h3>Responsive Design</h3>
+                <p>Looks great on any device.</p>
+            </div>
+            <div class="feature">
+                <h3>Fast Performance</h3>
+                <p>Optimized for speed and reliability.</p>
+            </div>
+            <div class="feature">
+                <h3>Easy Customization</h3>
+                <p>Simple to modify and extend.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div id="formMessage"></div>
+    </section>
+    <footer>
+        &copy; 2025 MySite. All rights reserved.
+    </footer>
+    <script>
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('formMessage').textContent = "Thank you for
